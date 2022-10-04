@@ -1,0 +1,37 @@
+#----------------------------------------------------------------------------------------------------#
+# Running Jobs on Cedar - June 29
+#----------------------------------------------------------------------------------------------------#
+
+1. Remove previous running data:
+	>> rm slurm-*
+	>> rm run_out/*
+
+2. Open python module:
+	>> module load python/3
+	
+3. Activate tensorflow
+	- Follow the instruction on the webpage:
+		>> module load python/3
+		>> virtualenv --no-donwload tensorflow
+		>> source tensorflow/bin/activate
+		>> pip install --no-index tensorflow==2.8
+
+4. Install hdf5storage:
+	>> pip install hdf5storage
+	>> import hdf5storage
+
+5. Install scipy:
+	>> pip install scipy
+	
+6. Install Tasmanian:
+	>> pip install Tasmanian
+	
+7. Install protobuf:
+	>> pip install protobuf==4.21.2
+	
+8. Submit the job:
+	>> bash batch_run_train.sh
+	
+9. Check the slurm files:
+	>> more slurm-*
+	>> more run_out/script_running.out
